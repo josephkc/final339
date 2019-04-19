@@ -64,9 +64,10 @@
         console.log(navbar)
 
         var sticky = navbar.offsetTop;
-
+        
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         function makeSticky() {
-            if (window.pageYOffset >= sticky) {
+            if ((window.pageYOffset >= sticky) && (!isMobile)) {
                 navbar.classList.add("sticky")
             } else {
                 navbar.classList.remove("sticky");
