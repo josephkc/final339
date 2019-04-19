@@ -51,7 +51,7 @@ footer {
 
 /*mobile*/
 
-#topnav li.a, li, .rightnav #myLinks {
+#topnav li.a, li, .rightnav {
 	overflow: hidden;
 	float: none;
 	list-style-type: none;

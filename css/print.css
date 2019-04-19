@@ -1,9 +1,9 @@
 @media print {
 	body:after {
-		content: url(http://chart.apis.google.com/chart?chs=120x120&cht=qr&chl=https%3A%2F%2josephkc.github.io/personal/contact.html)
+		content: url(http://chart.apis.google.com/chart?chs=120x120&cht=qr&chl=https%3A%2F%2josephkc.github.io/personal)
 	}
 
-	#topnav li.a, li, .rightnav #myLinks{
+	#topnav li.a, li, .rightnav h1{
 		display: none;
 	}
 }
