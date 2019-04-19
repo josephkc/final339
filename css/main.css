@@ -1,3 +1,4 @@
+/* FILTERING */
 .btn {
 	border: none;
 	outline: none;
@@ -9,21 +10,63 @@
 .btn:hover {
 	background-color: rgb(29, 29, 94);
 	color: white;
-  }
-  
-  /* Add a dark background to the active button */
-  .btn.current {
+}
+
+.btn.current {
 	background-color: rgb(29, 29, 94);
 	color: white;
-  }
+}
 
 #myBtnContainer {
 	padding: 2%;
 }
+/* FILTERING */
 
 #analytics {
 	height: 70%;
 	width: 70%;
+}
+
+/* CALLOUT BOX */
+.callout {
+	position: fixed;
+	bottom: 35px;
+	right: 20px;
+	margin-left: 20px;
+  }
+  
+  .callout-header {
+	padding: 3%;
+	background: black;
+	color: whitesmoke;
+  }
+  
+  .callout-container {
+	padding: 15px;
+	background-color: red;
+	color: black
+  }
+  
+  .closebtn {
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	color: white;
+	font-size: 30px;
+	cursor: pointer;
+  }
+  /* CALLOUT BOX */
+
+.parallax {
+	background-image: url('code-bkg.jpg');
+  
+	height: 100vh; 
+	width: 100%;
+  
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 body {

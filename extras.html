@@ -44,21 +44,33 @@
     <main id="main">
         <h1>extras</h1>
 
+        <div class="callout">
+            <div class="callout-header">EXTRAS!</div>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <div class="callout-container">
+                <p>This is the extras page! HTML5 Video, CSS Parallax, and CSS Callout! </p>
+            </div>
+        </div>
+
         <div id="videodiv">
             <h2>Adobe After Effects motion tracking test</h2>
             <video id="video" controls autoplay>
                 <source src="videos/loons.mp4" type="video/mp4">
                 <track src="videos/loonsaudio.m4a" kind="descriptions" srclang="en" label="english_description">
-                Your browser does not support the video tag.
+                Your browser does not support HTML5 videos.
             </video>
         </div>
 
-        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+
+        <!-- PARALLAX -->
+        <div class="parallax"></div>
 
         <h2>Google Analytics: Mobile device data</h2>
         <img src="imgs/analytics.png" alt="google Analytics information" id="analytics" />
 
-
+        <!-- PARALLAX -->
+        <div class="parallax"></div>
     </main>
     <script>
         window.onscroll = function () { makeSticky() };
@@ -77,6 +89,7 @@
             }
         }
     </script>
+
 </body>
 
 </html>
