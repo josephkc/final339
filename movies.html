@@ -27,19 +27,29 @@
     <a href=#main class="skip">Skip to content</a>
     <header>
         <nav>
-            <ul class="topnav">
-                <li><a href="index.html"> about me </a></li>
-                <li><a href="projects.html"> my projects </a></li>
-                <li><a class="active" href="movies.html"> movies </a></li>
-                <li><a href="contact.html"> contact </a></li>
-                <li class="rightnav"><a href="resume.pdf" target="_blank"> <i class="fas fa-file-alt"></i> resume </a>
-                </li>
+            <ul id="topnav">
+                <div id="myLinks">
+                    <li><a href="index.html"> about me </a></li>
+                    <li><a href="projects.html"> my projects </a></li>
+                    <li><a class="active" href="movies.html"> movies </a></li>
+                    <li><a href="extras.html"> extras </a></li>
+                    <li><a href="contact.html"> contact </a></li>
+                    <li class="rightnav"><a href="resume.pdf" target="_blank"> <i class="fas fa-file-alt"></i> resume
+                        </a>
+                    </li>
+                </div>
             </ul>
         </nav>
     </header>
 
     <main id="main">
-        <h1>my favorite movies</h1>
+        <h1> movies i like </h1>
+
+        <div id="myBtnContainer">
+            <button class="btn current" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('favorite')"> My favorites</button>
+        </div>
+
         <div class="grid-container">
             <div class="grid-item">
                 <div><img src="imgs/beasts.jpg" alt="Beasts of the southern wild poster" class="poster" />
@@ -50,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="grid-item">
+            <div class="grid-item favorite">
                 <div><img src="imgs/cityofgod.jpg" alt="City of God poster" class="poster" /></div>
                 <div class="moviedesc">
                     <h2>City of God</h2>
@@ -74,7 +84,7 @@
                 </div>
             </div>
 
-            <div class="grid-item">
+            <div class="grid-item favorite">
                 <div><img src="imgs/madmax.jpg" alt="mad max poster" class="poster" /></div>
                 <div class="moviedesc">
                     <h2>Mad Max: Fury Road</h2>
@@ -107,7 +117,7 @@
                 </div>
             </div>
 
-            <div class="grid-item">
+            <div class="grid-item favorite">
                 <div><img src="imgs/exmachina.jpg" alt="exmachina poster" class="poster" /></div>
                 <div class="moviedesc">
                     <h2>Ex Machina</h2>
@@ -145,6 +155,69 @@
     <footer id="bottom-footer">
         Joseph Choi | 2019
     </footer>
+
+    <script>
+        window.onscroll = function () { makeSticky() };
+
+        var navbar = document.getElementById("topnav");
+        console.log(navbar)
+
+        var sticky = navbar.offsetTop;
+
+        function makeSticky() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        //-----------FILTERING-----------//
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("grid-item");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("current");
+                current[0].className = current[0].className.replace(" current", "");
+                this.className += " current";
+            });
+        }
+        //--------------END OF FILTERING-------------//
+
+    </script>
 
 </body>
 

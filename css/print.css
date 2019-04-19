@@ -1,0 +1,9 @@
+@media print {
+	body:after {
+		content: url(http://chart.apis.google.com/chart?chs=120x120&cht=qr&chl=https%3A%2F%2josephkc.github.io/personal/contact.html)
+	}
+
+	#topnav li.a, li, .rightnav #myLinks{
+		display: none;
+	}
+}

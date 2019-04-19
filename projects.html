@@ -28,13 +28,17 @@
     <a href=#main class="skip">Skip to content</a>
     <header>
         <nav>
-            <ul class="topnav">
-                <li><a href="index.html"> about me </a></li>
-                <li><a class="active" href="projects.html"> my projects </a></li>
-                <li><a href="movies.html"> movies </a></li>
-                <li><a href="contact.html"> contact </a></li>
-                <li class="rightnav"><a href="resume.pdf" target="_blank"> <i class="fas fa-file-alt"></i> resume </a>
-                </li>
+            <ul id="topnav">
+                <div id="myLinks">
+                    <li><a href="index.html"> about me </a></li>
+                    <li><a class="active" href="projects.html"> my projects </a></li>
+                    <li><a href="movies.html"> movies </a></li>
+                    <li><a href="extras.html"> extras </a></li>
+                    <li><a href="contact.html"> contact </a></li>
+                    <li class="rightnav"><a href="resume.pdf" target="_blank"> <i class="fas fa-file-alt"></i> resume
+                        </a>
+                    </li>
+                </div>
             </ul>
         </nav>
     </header>
@@ -105,6 +109,23 @@
     <footer id="bottom-footer">
         Joseph Choi | 2019
     </footer>
+
+    <script>
+        window.onscroll = function () { makeSticky() };
+
+        var navbar = document.getElementById("topnav");
+        console.log(navbar)
+
+        var sticky = navbar.offsetTop;
+
+        function makeSticky() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
 
 </body>
 

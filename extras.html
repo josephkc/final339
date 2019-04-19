@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134853987-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -10,31 +11,14 @@
 
         gtag('config', 'UA-134853987-1');
     </script>
-
-    <style type="text/css">
-        @media print {
-            body:after {
-                content: url(http://chart.apis.google.com/chart?chs=120x120&cht=qr&chl=https%3A%2F%2josephkc.github.io/personal)
-            }
-
-            #topnav li.a,
-            li,
-            .rightnav #myLinks {
-                display: none;
-            }
-        }
-    </style>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>contact</title>
+    <title>movies</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="css/print.css">
-    <link rel="icon" href="imgs/email.png">
+    <link rel="icon" href="imgs/filmreel.png">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
@@ -48,8 +32,8 @@
                     <li><a href="index.html"> about me </a></li>
                     <li><a href="projects.html"> my projects </a></li>
                     <li><a href="movies.html"> movies </a></li>
-                    <li><a href="extras.html"> extras </a></li>
-                    <li><a class="active" href="contact.html"> contact </a></li>
+                    <li><a class="active" href="extras.html"> extras </a></li>
+                    <li><a href="contact.html"> contact </a></li>
                     <li class="rightnav"><a href="resume.pdf" target="_blank"> <i class="fas fa-file-alt"></i> resume
                         </a>
                     </li>
@@ -59,42 +43,25 @@
     </header>
 
     <main id="main">
-        <h1 class="bkg-image">contact</h1>
-
-        <div class="flex-container">
-            <div class="paragraph">
-                <p class="paragraph">
-                    <h2>Joseph Choi</h2>
-                    <br>
-                    If you have questions about my projects, or just want to chat, feel
-                    free to reach out!
-                    <br>
-                    <a href="https://www.linkedin.com/in/choi-joseph" target="_blank">
-                        <img src="imgs/linkedin.png" alt="linkedin link" id="linkedin">
-                    </a>
-                    <br>
-                    joschoi@umich.edu
-                </p>
-            </div>
-
-            <div>
-                <img src="imgs/portrait.jpg" alt="Portrait" class="picture" />
-            </div>
-
+        <div id="videodiv">
+            <h2>Adobe After Effects motion tracking test</h2>
+            <video id="video" controls autoplay>
+                <source src="videos/loons.mp4" type="video/mp4">
+            </video>
         </div>
 
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        
+        <h2>Google Analytics: Mobile device data</h2>
+        <img src="imgs/analytics.png" alt="google Analytics information" id="analytics" />
 
 
     </main>
-
-    <footer id="bottom-footer">
-        Joseph Choi | 2019
-    </footer>
-
     <script>
         window.onscroll = function () { makeSticky() };
 
         var navbar = document.getElementById("topnav");
+        console.log(navbar)
 
         var sticky = navbar.offsetTop;
 
@@ -106,7 +73,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>

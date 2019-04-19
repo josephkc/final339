@@ -21,42 +21,52 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <style type="text/css">
+        @media print {
+            body::after {
+                content: url(http://chart.apis.google.com/chart?chs=120x120&cht=qr&chl=https%3A%2F%2josephkc.github.io/personal)
+            }
+
+            #topnav li.a,
+            li,
+            .rightnav #myLinks {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body onload="typeWriter()">
     <a href=#main class="skip">Skip to content</a>
 
     <header>
         <nav>
-            <ul class="topnav">
-                <li><a class="active" href="index.html"> about me </a></li>
-                <li><a href="projects.html"> my projects </a></li>
-                <li><a href="movies.html"> movies </a></li>
-                <li><a href="contact.html"> contact </a></li>
-                <li class="rightnav"><a href="resume.pdf" target="_blank"> <i class="fas fa-file-alt"></i> resume </a>
-                </li>
+            <ul id="topnav">
+                <div id="myLinks">
+                    <li><a class="active" href="index.html"> about me </a></li>
+                    <li><a href="projects.html"> my projects </a></li>
+                    <li><a href="movies.html"> movies </a></li>
+                    <li><a href="extras.html"> extras </a></li>
+                    <li><a href="contact.html"> contact </a></li>
+                    <li class="rightnav"><a href="resume.pdf" target="_blank"> <i class="fas fa-file-alt"></i> resume
+                        </a>
+                    </li>
+                </div>
             </ul>
         </nav>
     </header>
 
     <main id="main">
-        <h1>Hi! I'm Joseph</h1>
+        <h1 id="intro"></h1>
         <div class="flex-container">
             <p class="paragraph">
                 I am a second year student at the University of Michigan, and I'm interested in
-                accessible web development and
+                entrepreneurship, business, and
                 data science! When I started college, I was planning on majoring in computer science, but after taking
-                both EECS and SI
-                classes, I realized I wanted to study something more people-oriented.
-                <br><br>
-                I see the School of Information's interdisciplinary focus on technology and people as a perfect fit for
-                my
-                passions and goals. I am most interested in studying accessibility in user experience, to pursue a
-                career
-                in user experience design. I am fascinated by the ways in which information technology can more than
-                impersonal problem solving, and how it can be human-oriented and exciting. My shift from CS to
-                Information
-                was caused by a love for people and problem solving in a people-oriented way.
+                CS, Economics, and Entrepreneurship
+                classes, I realized I wanted to explore how I could merge my interests in a unique way.
                 <br><br>
                 I currently work at University of Michigan ITS as a Tech Consultant. I provide technical support for
                 customers’ personal devices and Campus Computing Site technology, which allows me to combine my
@@ -72,6 +82,42 @@
     <footer id="bottom-footer">
         Joseph Choi | 2019
     </footer>
+
+    <script>
+        window.onscroll = function () { makeSticky() };
+
+        var navbar = document.getElementById("topnav");
+        console.log(navbar)
+
+        var sticky = navbar.offsetTop;
+
+        function makeSticky() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        var i = 0;
+        var txt = 'Hello! I\'m Joseph';
+        var fastspeed = 65;
+        var slowspeed = 800;
+
+        function typeWriter() {
+            if (i == 6) {
+                document.getElementById("intro").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, slowspeed);
+            }
+            else if (i < txt.length){
+                document.getElementById("intro").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, fastspeed);
+            }
+        }
+    </script>
+
 
 </body>
 
